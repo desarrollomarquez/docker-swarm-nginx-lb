@@ -16,14 +16,14 @@ sudo docker swarm init
 
 #Backend:
 
-sudo docker build --tag backend/app-node /home/ubuntu/docker-swarm/backend/app-node/
-sudo docker build --tag backend/nginx /home/ubuntu/docker-swarm/backend/nginx/
+sudo docker build --tag backend/app-node /backend/app-node/
+sudo docker build --tag backend/nginx /backend/nginx/
 sudo docker service create --name backend-app-node-swarm -p 80:5000 --replicas 2 backend/app-node
 
 #Frontend: 
 
-sudo docker build --tag frontend/app-node /home/ubuntu/docker-swarm/frontend/app-node/
-sudo docker build --tag frontend/nginx /home/ubuntu/docker-swarm/frontend/nginx/
+sudo docker build --tag frontend/app-node /frontend/app-node/
+sudo docker build --tag frontend/nginx /frontend/nginx/
 sudo docker service create --name frontend-app-node-swarm -p 81:3000 --replicas 2 frontend/app-node
 
 sudo docker service ls
